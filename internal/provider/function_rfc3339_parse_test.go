@@ -23,7 +23,7 @@ func TestRFC3339Parse_UTC(t *testing.T) {
 			{
 				Config: `
                 output "test" {
-                    value = provider::exampletime::rfc3339_parse("2023-07-25T23:43:16Z")
+                    value = provider::labels::rfc3339_parse("2023-07-25T23:43:16Z")
                 }
                 `,
 				ConfigPlanChecks: resource.ConfigPlanChecks{
@@ -51,7 +51,7 @@ func TestRFC3339Parse_UTC(t *testing.T) {
 			{
 				Config: `
                 output "test" {
-                    value = provider::exampletime::rfc3339_parse("2023-07-25T23:43:16-00:00")
+                    value = provider::labels::rfc3339_parse("2023-07-25T23:43:16-00:00")
                 }
                 `,
 				ConfigPlanChecks: resource.ConfigPlanChecks{
@@ -63,7 +63,7 @@ func TestRFC3339Parse_UTC(t *testing.T) {
 			{
 				Config: `
                 output "test" {
-                    value = provider::exampletime::rfc3339_parse("2023-07-25T23:43:16+00:00")
+                    value = provider::labels::rfc3339_parse("2023-07-25T23:43:16+00:00")
                 }
                 `,
 				ConfigPlanChecks: resource.ConfigPlanChecks{
@@ -86,7 +86,7 @@ func TestRFC3339Parse_offset(t *testing.T) {
 			{
 				Config: `
                 output "test" {
-                    value = provider::exampletime::rfc3339_parse("1996-12-19T16:39:57-08:00")
+                    value = provider::labels::rfc3339_parse("1996-12-19T16:39:57-08:00")
                 }
                 `,
 				ConfigPlanChecks: resource.ConfigPlanChecks{
@@ -125,7 +125,7 @@ func TestRFC3339Parse_invalid(t *testing.T) {
 			{
 				Config: `
                 output "test" {
-                    value = provider::exampletime::rfc3339_parse("abcdef")
+                    value = provider::labels::rfc3339_parse("abcdef")
                 }
                 `,
 				ExpectError: regexp.MustCompile(`"abcdef" is not a valid RFC3339 timestamp.`),
